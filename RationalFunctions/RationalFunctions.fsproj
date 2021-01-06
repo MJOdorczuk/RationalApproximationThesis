@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Interfaces.fs" />
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FunctionUtils\FunctionUtils.fsproj" />
+    <ProjectReference Include="..\PolynomialApproximation\PolynomialApproximation.fsproj" />
+    <ProjectReference Include="..\Polynomials\Polynomials.fsproj" />
+  </ItemGroup>
+
+</Project>
