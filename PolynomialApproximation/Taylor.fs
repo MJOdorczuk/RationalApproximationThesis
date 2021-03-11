@@ -7,10 +7,13 @@ open FunctionUtils.MiscFunctions
 
 module Taylor = 
 
+    let Taylorize =
+        List.mapi (fun i d -> d / (float (Fact i)))
+
     let FromDerivatives (ds : float list) (x : float) : Polynomial =
         ds
-        |> List.indexed
-        |> List.map (fun (i, d) -> (power i X) * d / (float (Fact i)))
+        |> Taylorize
+        |> List.mapi (fun i t -> (powerX i) * t)
         |> List.fold (+) ZERO
         |> apply (X - ONE * x)
 

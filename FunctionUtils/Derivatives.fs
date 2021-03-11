@@ -1,13 +1,14 @@
 ﻿namespace FunctionUtils
 
 open System
-open System.Numerics
 open MiscFunctions
 
 module DerivativesUtils =
-    let circle = [0.0 .. 0.00001 .. (Math.PI * 2.0)]
-
-    let circleLen = Seq.length circle
+    let circleLen = 10000
+    let circle =
+        [0 .. circleLen]
+        |> List.map (fun i -> float i / float circleLen)
+        |> List.map (fun x -> x * 2.0 * Math.PI)
 
     let print z =
         printf "%A\n" z
@@ -32,5 +33,4 @@ module Derivatives =
     let DerivativeList f n x =
         [0..n]
         |> List.map (fun i -> Cauchy f i (Complex(x, 0.0)))
-        |> List.map print
         |> List.map (fun z -> z.Real)
