@@ -14,3 +14,6 @@ module MiscFunctions =
         elif v > upper 
         then upper 
         else v
+
+    let SafeAccess (l: 'a list) def i =
+        if i < 0 || i >= l.Length then def else l.[i]

@@ -4,15 +4,11 @@ open System
 open MiscFunctions
 
 module DerivativesUtils =
-    let circleLen = 10000
+    let CIRCLE_LEN = 10000
     let circle =
-        [0 .. circleLen]
-        |> List.map (fun i -> float i / float circleLen)
+        [0 .. CIRCLE_LEN]
+        |> List.map (fun i -> float i / float CIRCLE_LEN)
         |> List.map (fun x -> x * 2.0 * Math.PI)
-
-    let print z =
-        printf "%A\n" z
-        z
 
 module Derivatives =
     open DerivativesUtils

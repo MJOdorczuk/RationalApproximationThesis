@@ -10,13 +10,14 @@ module Taylor =
     let Taylorize =
         List.mapi (fun i d -> d / (float (Fact i)))
 
-    let FromDerivatives (ds : float list) (x : float) : Polynomial =
+    let FromDerivatives ds degree x =
         ds
+        |> List.take (degree + 1)
         |> Taylorize
-        |> List.mapi (fun i t -> (powerX i) * t)
-        |> List.fold (+) ZERO
+        |> List.rev
+        |> List.fold (fun acc t -> (acc * X + t)) ZERO
         |> apply (X - ONE * x)
 
     let NumericallyDifferentiated f degree x =
         let ds = DerivativeList f degree x
-        FromDerivatives ds x
+        FromDerivatives ds degree x
