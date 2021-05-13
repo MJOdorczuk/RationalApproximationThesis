@@ -2,7 +2,7 @@
 
 open Interfaces
 
-let ZERO = Polynomial([0.0])
+let ZERO = Polynomial.Zero
 let ONE = Polynomial([1.0])
 let X = Polynomial([0.0; 1.0])
 

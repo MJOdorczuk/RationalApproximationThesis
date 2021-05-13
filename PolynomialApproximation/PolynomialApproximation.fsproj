@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Orthogonals.fs" />
     <Compile Include="Taylor.fs" />
   </ItemGroup>
 

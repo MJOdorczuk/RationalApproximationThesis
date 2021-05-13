@@ -1,7 +1,6 @@
 ﻿namespace PolynomialApproximation
 
 open Polynomials.Operations
-open Polynomials.Interfaces
 open FunctionUtils.Derivatives
 open FunctionUtils.MiscFunctions
 

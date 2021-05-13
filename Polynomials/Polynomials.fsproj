@@ -7,7 +7,7 @@
   <ItemGroup>
     <Compile Include="Interfaces.fs" />
     <Compile Include="Operations.fs" />
-    <Compile Include="Library.fs" />
+    <Compile Include="Chebyshev.fs" />
   </ItemGroup>
 
   <ItemGroup>
